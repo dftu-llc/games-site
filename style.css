@@ -1,0 +1,75 @@
+/* Violightion pages. Plain CSS: system fonts, no images, no web fonts, nothing loaded from elsewhere.
+   Sizes are in rem and em so the reader's text size setting applies, including the largest sizes. */
+
+:root {
+  color-scheme: light dark;
+  --bg: #ffffff;
+  --text: #1b1b1f;
+  --muted: #55555c;
+  --link: #0b4fd6;
+  --rule: #c9c9d1;
+  --panel: #f3f3f7;
+  --placeholder-bg: #fff2b3;
+  --placeholder-text: #4a3b00;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #131316;
+    --text: #ececf1;
+    --muted: #b0b0ba;
+    --link: #8fb4ff;
+    --rule: #3a3a44;
+    --panel: #1e1e24;
+    --placeholder-bg: #4a3b00;
+    --placeholder-text: #ffe9a0;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.page {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+header.site { border-bottom: 1px solid var(--rule); margin-bottom: 1.5rem; padding-bottom: 0.75rem; }
+header.site p { margin: 0; font-weight: 700; font-size: 1.25rem; }
+nav ul { list-style: none; margin: 0.5rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; }
+
+h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 0.5rem; }
+h2 { font-size: 1.5rem; line-height: 1.25; margin: 2rem 0 0.5rem; }
+h3 { font-size: 1.2rem; margin: 1.25rem 0 0.25rem; }
+p, ul, ol, dl { margin: 0.75rem 0; }
+li { margin: 0.25rem 0; }
+.lede { color: var(--muted); }
+
+a { color: var(--link); text-underline-offset: 0.15em; }
+a:focus-visible { outline: 3px solid var(--link); outline-offset: 2px; }
+
+.summary { background: var(--panel); border: 1px solid var(--rule); border-radius: 0.5rem; padding: 0.5rem 1rem; }
+.summary h2 { margin-top: 0.5rem; }
+
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; margin: 0.75rem 0; }
+caption { text-align: left; font-weight: 700; padding-bottom: 0.25rem; }
+th, td { text-align: left; vertical-align: top; border: 1px solid var(--rule); padding: 0.5rem 0.625rem; }
+th { background: var(--panel); }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.9em; overflow-wrap: anywhere; }
+
+/* A placeholder is meant to be impossible to miss while a page is a draft. */
+.placeholder { background: var(--placeholder-bg); color: var(--placeholder-text); padding: 0 0.25em; border-radius: 0.25em; }
+
+footer { border-top: 1px solid var(--rule); margin-top: 2.5rem; padding-top: 0.75rem; color: var(--muted); font-size: 0.95rem; }

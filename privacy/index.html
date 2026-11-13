@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy - Violightion</title>
+<meta name="description" content="What Violightion keeps on your phone, what it sends if you say yes, and your choices.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="page">
+<header class="site">
+<p>Violightion</p>
+<nav aria-label="Pages">
+<ul>
+<li><a href="../">Home</a></li>
+<li><a href="../support/">Support</a></li>
+</ul>
+</nav>
+</header>
+<main>
+<h1>Privacy policy</h1>
+<p class="lede">This policy is for version 1 of the Violightion app. Effective November 12, 2026.</p>
+
+<section class="summary" aria-labelledby="summary">
+<h2 id="summary">In short</h2>
+<ul>
+<li>What you type into Violightion is kept on your phone, and Violightion does not send it anywhere: names, groups, scores and rewards.</li>
+<li>Violightion sends nothing unless you choose to share usage counts. This is off until then.</li>
+<li>The counts are numbers and a random code made on the phone. They never include names, avatars, places, group names or reward text.</li>
+<li>There are no ads, no third-party SDKs, no advertising or analytics libraries and no tracking code, and no purchases inside the app.</li>
+</ul>
+</section>
+
+<h2 id="phone">What stays on your phone</h2>
+<p>These are saved in the app on your phone and are not sent anywhere by Violightion:</p>
+<ul>
+<li>the names you enter for the people playing, and the avatar and colour chosen for each</li>
+<li>group names and the game type of each group</li>
+<li>scores, rides, undos and redemptions</li>
+<li>reward lists, including the reward text you type, and the target and reward of a race round</li>
+<li>the scoring values you set</li>
+</ul>
+<p>Violightion does not use your location, photos or contacts.</p>
+<p>Deleting the app deletes this data from your phone. Your phone's own backups may contain it. Violightion does not send that backup anywhere.</p>
+
+<h2 id="sent">What is sent if you say yes</h2>
+<p>After a short introduction, the app asks whether to share usage counts. The answer "No thanks" is the first button. If the question is closed without an answer, nothing is sent and it is asked again the next time the app opens.</p>
+<p>Before a yes counts, the phone asks for Face ID, Touch ID or the passcode, to show that the person answering holds the phone. The phone does this itself. Violightion is told only whether it worked. If it did not, nothing changes and nothing is sent. The same switch is in Settings, under "Share usage counts". Saying no, and turning the switch off, need no confirmation.</p>
+<p>If you say yes, Violightion sends four kinds of events. Each event has three fields: the event name, a random code (the install code, below) and the version of the app. Some events add the fields shown here.</p>
+<div class="table-wrap">
+<table>
+<caption>The four events</caption>
+<thead>
+<tr><th scope="col">Event</th><th scope="col">Sent when</th><th scope="col">Fields besides the three above</th></tr>
+</thead>
+<tbody>
+<tr><th scope="row"><code>app_opened</code></th><td>The app is opened.</td><td>None.</td></tr>
+<tr><th scope="row"><code>group_created</code></th><td>A group is created.</td><td><code>gameType</code>: <code>classic</code> or <code>race</code>. For a classic group, <code>playerCount</code>: a whole number from 2 to 6. A race group sends no count.</td></tr>
+<tr><th scope="row"><code>ride_completed</code></th><td>A ride ends.</td><td><code>gameType</code>: <code>classic</code> or <code>race</code>. <code>findCount</code>: a whole number from 0 to 10000, not counting finds that were undone.</td></tr>
+<tr><th scope="row"><code>reward_redeemed</code></th><td>A reward is redeemed. Only classic groups can redeem.</td><td><code>gameType</code>: always <code>classic</code>. Nothing about the reward.</td></tr>
+</tbody>
+</table>
+</div>
+<p>The event name, <code>installId</code> and <code>appVersion</code> are the three shared fields. Every field is a fixed word, a strict pattern or a number in a set range. None can hold free text, and the server turns away anything else. The server adds one thing: the time it received the event. The app sends no time.</p>
+<h3 id="install-code">The install code</h3>
+<p>The install code (<code>installId</code>) is a random code the phone makes when sharing is turned on. It is not made from any number that belongs to your phone, to you or to the advertising system. It lets the counts from one phone be told apart from another's, and it carries no name. The app keeps it in a small private file that is left out of backups. It is deleted when you turn sharing off, and turning sharing on again makes a new one. The app never shows it to you.</p>
+<h3 id="when">When counts are sent</h3>
+<ul>
+<li>Never before you have said yes.</li>
+<li>Never during a ride. Counts wait and go after the ride ends.</li>
+<li>Only when the phone is online, in the background, without showing anything on screen.</li>
+<li>Counts that are waiting are held in the app's memory, up to 50, oldest dropped first. If the app is closed first, they are lost. So the numbers are approximate.</li>
+</ul>
+
+<h2 id="never">What is never collected</h2>
+<ul>
+<li>Names of any player or any other person, and avatars</li>
+<li>Group names and reward text</li>
+<li>Location of any kind</li>
+<li>Photos, contacts, or anything from them</li>
+<li>The advertising identifier or any other number that belongs to your phone</li>
+</ul>
+<p>Violightion's server does not store your internet address. It is not in the event, not in the server's logs and not in an access log, because access logging is turned off. Like any internet connection, the equipment between your phone and the server needs to see the address to deliver the data.</p>
+
+<h2 id="where">Where it goes and how long it is kept</h2>
+<p>Events go to a small server run for Violightion on Amazon Web Services, in the region named <code>us-east-2</code>, in the United States. Each batch is saved as a small text file in private storage that is encrypted and closed to the public, under a random file name and filed by the date it arrived.</p>
+<ul>
+<li>Events are kept for about 13 months and are then deleted automatically.</li>
+<li>When we count events, the results are saved in separate private storage for up to 7 days.</li>
+<li>The server's own logs hold only short notes such as "stored" and a number of events. They are kept 14 days.</li>
+</ul>
+
+<h2 id="choices">Your choices</h2>
+<ul>
+<li><strong>Say no, or turn sharing off.</strong> Open Settings in the app and switch off "Share usage counts". Sending stops at once, and the counts that were waiting and the install code are deleted from the phone.</li>
+<li><strong>Delete the app.</strong> This deletes everything the app holds on your phone, including the install code.</li>
+</ul>
+<p>Counts that were already received are not deleted when you turn sharing off. Individual counts cannot be looked up or deleted afterward. They carry no name and the app never shows you your install code, so there is no practical way for you or for us to tell which counts came from your phone. They are deleted automatically after about 13 months.</p>
+
+<h2 id="who">Who may use the app</h2>
+<p>Violightion is intended for people 13 and older and does not ask for anyone's age.</p>
+
+<h2 id="third-parties">Third parties and tracking</h2>
+<ul>
+<li>The app contains no third-party SDKs, no advertising or analytics libraries and no tracking code.</li>
+<li>Violightion does not track you. It does not ask permission to track, and it does not use the advertising identifier.</li>
+<li>Violightion is a paid download with no ads and no purchases inside the app.</li>
+<li>The only place the app sends anything is Violightion's own server, described above, and only if you have said yes. The server is hosted on Amazon Web Services.</li>
+</ul>
+
+<h2 id="changes">If this policy changes</h2>
+<p>A change to this policy is published on this page with a new effective date.</p>
+
+<h2 id="contact">Contact</h2>
+<p>DFTU, LLC<br>
+<a href="mailto:support@pnwdiy.com">support@pnwdiy.com</a></p>
+<p>More ways to reach us are on the <a href="../support/">support page</a>.</p>
+
+<h2 id="effective">Effective date</h2>
+<p>November 12, 2026</p>
+</main>
+<footer>
+<p><a href="../">Violightion</a> &middot; <a href="../support/">Support</a></p>
+</footer>
+</div>
+</body>
+</html>
